@@ -1,0 +1,324 @@
+*, h1, h2, h5, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #5B5E6D;
+  text-align: center;
+  overflow-x: hidden;
+}
+.main {
+  // padding: 105px 0 98px;
+  padding: 35px 0 40px;
+  max-width: 770px;
+  margin: 0 auto;
+}
+.title {
+  color: #313135;
+}
+.page-title {
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 53px;
+}
+.section-title {
+  font-size: 40px;
+  line-height: 56px;
+  font-weight: normal;
+}
+.section-subtitle {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: normal;
+}
+.description {
+  font-size: 18px;
+  line-height: 27px;
+  max-width: 490px;
+  margin: 29px auto 54px;
+}
+.btn {
+  display: block;
+  height: 60px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0066FF;
+  box-shadow: 0px 3px 10px rgba(0, 102, 255, 0.5);
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    background: #3774d0;
+    box-shadow: 0px 3px 12px rgba(9, 44, 97, 0.8);
+  }
+}
+
+.form-wrap {
+  background: #fff;
+  box-shadow: 0px 2px 5px rgba(94, 86, 86, 0.15);
+  border-radius: 6px;
+  padding: 66px 70px 78px;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -140px;
+    bottom: 15px;
+    height: 397px;
+    width: 166px;
+    background: no-repeat url(../img/man.svg);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: -165px;
+    bottom: -70px;
+    height: 372px;
+    width: 343px;
+    background: no-repeat url(../img/girl2.svg);
+  }
+  .form {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    &-row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .form__field {
+        max-width: 300px;
+        width: 100%;
+        min-width: 150px;
+      }
+    }
+    &__field {
+      border: none;
+      outline: none;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E6E6E6;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: #666;
+      &:focus {
+        border-bottom: 2px solid #4195ff;
+      }
+    }
+    &-txtarea {
+      flex-basis: 100%;
+      resize: none;
+      min-height: 90px;
+      max-height: 150px;
+      margin-top: 78px;
+      padding-right: 40px;
+      position: relative;
+      z-index: 3;
+      background: none;
+    }
+    .btn-send {
+      width: 200px;
+      border: none;
+      outline: none;
+      margin-top: 32px;
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+
+.faq {
+  margin-top: 110px;
+  .section-subtitle {
+    margin-top: 12px;
+  }
+  .accordion {
+    margin-top: 30px;
+    &-block {
+      background: #FFFFFF;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+      text-align: left;
+      position: relative;
+      + .accordion-block {
+        margin-top: 30px;
+      }
+      &-head {
+        padding: 20px 90px 20px 40px;
+        &:hover {
+          cursor: pointer;
+          .accordion-block__question {
+            color: #3774d0;
+          }
+        }
+      }
+      &__question {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        transition: 0.3s;
+      }
+      &__answer {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 0 90px 20px 40px;
+        display: none;
+        a {
+          text-decoration: none;
+          color: #0066FF;
+          transition: 0.3s;
+          &:hover {
+            color: #4653ab;
+          }
+        }
+        ul, ol {
+          padding-inline-start: 20px;
+        }
+      }
+      .arrow-decor {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        right: 40px;
+        top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        img {
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}
+.accordion-block.open {
+  .arrow-decor {
+    background: #F2F7FF;
+    img {
+      transform: rotate(180deg);
+    }
+  }
+  .accordion-block__question {
+    color: #0066FF;
+  }
+}
+
+.support {
+  margin-top: 71px;
+  .btn-modal {
+    width: 260px;
+    margin: 37px auto 0;
+  }
+}
+
+@media (max-width: 1120px) {
+  .form-wrap {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .form-wrap .form-row {
+    flex-direction: column;
+    .form__field {
+      max-width: 100%;
+      + .form__field {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .main {
+    padding: 35px 20px 40px;
+  }
+  .section-title {
+    font-size: 34px;
+    line-height: 46px;
+  }
+  .form-wrap {
+    padding: 40px 60px;
+  }
+  .form-wrap:before {
+    left: -77px;
+    bottom: 125px;
+    height: 297px;
+    width: 146px;
+    background-size: contain;
+  }
+  .form-wrap:after {
+    right: -146px;
+    bottom: 40px;
+    height: 254px;
+    width: 273px;
+    background-size: contain;
+  }
+  .form-wrap .form-txtarea {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-wrap {
+    width: 100%;
+    padding: 20px 15px 35px;
+    margin-top: 250px;
+    .form {
+      justify-content: center;
+    }
+    .form-txtarea {
+      margin-top: 38px;
+    }
+  }
+  .form-wrap:before {
+    left: 8%;
+    bottom: unset;
+    top: -220px;
+    height: 205px;
+    width: 86px;
+  }
+  .form-wrap:after {
+    right: 8%;
+    bottom: unset;
+    top: -147px;
+    height: 130px;
+    width: 120px;
+  }
+  .faq {
+    margin-top: 50px;
+    .accordion-block-head {
+      padding: 10px 40px 10px 10px;
+    }
+    .accordion-block .arrow-decor {
+      right: 10px;
+      top: 10px;
+    }
+    .accordion-block__answer {
+      padding: 0 40px 20px 10px;
+    }
+  }
+  .support {
+    margin-top: 44px;
+    .btn-modal {
+      margin-top: 25px;
+    }
+  }
+  .section-title {
+    font-size: 27px;
+    line-height: 34px;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
